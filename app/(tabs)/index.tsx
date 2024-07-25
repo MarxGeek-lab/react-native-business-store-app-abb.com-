@@ -3,7 +3,7 @@ import { Image, StyleSheet, Platform } from 'react-native';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import TileProduct from '@/constants/Tile/Tile';
+import TileProduct from '@/components/Tile/Tile';
 
 export default function HomeScreen() {
 

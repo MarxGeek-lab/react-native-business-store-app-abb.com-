@@ -1,7 +1,7 @@
 import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
-import { TabBarIcon } from "@/components/navigation/TabBarIcon";
+import { TabBarIcon2 } from "@/components/navigation/TabBarIcon2";
 import { Colors } from "@/constants/Colors";
 import { Button, StyleSheet } from "react-native";
 
@@ -11,7 +11,7 @@ export default function Products() {
             <ThemedView style={styles.container}>
                 <ThemedText type="pageTitle">Contact</ThemedText>
                 <ThemedView style={styles.business}>
-                    <TabBarIcon name={'business'} color={Colors.light.text} size={50} />
+                    <TabBarIcon2 name={'business'} color={Colors.light.icon} size={50} />
                     <ThemedView style={styles.businnesText}>
                         <ThemedText type="subtitle">Abraham Blessing'</ThemedText>
                         <ThemedText style={styles.store}>store</ThemedText>
@@ -19,19 +19,19 @@ export default function Products() {
                 </ThemedView>
                 <ThemedView style={styles.contactBlock}>
                     <ThemedView style={styles.contact}>
-                        <TabBarIcon style={styles.contactIcon} name={'call-outline'} color={Colors.light.text} size={50} />
+                        <TabBarIcon2 style={styles.contactIcon} name={'call-outline'} size={50} color={Colors.light.icon} />
                         <ThemedText>+229 69 49 55 54</ThemedText>
                     </ThemedView>
                     <ThemedView style={styles.contact}>
-                        <TabBarIcon style={styles.contactIcon} name={'logo-whatsapp'} color={Colors.light.text} size={50} />
+                        <TabBarIcon2 style={styles.contactIcon} name={'logo-whatsapp'} color={Colors.light.icon} size={50} />
                         <ThemedText>+229 69 49 55 54</ThemedText>
                     </ThemedView>
                     <ThemedView style={styles.contact}>
-                        <TabBarIcon style={styles.contactIcon} name={'mail-outline'} color={Colors.light.text} size={50} />
+                        <TabBarIcon2 style={styles.contactIcon} name={'mail-outline'} color={Colors.light.icon} size={50} />
                         <ThemedText>rsonnon@gmail.com</ThemedText>
                     </ThemedView>
                     <ThemedView style={styles.contact}>
-                        <TabBarIcon style={styles.contactIcon} name={'location-outline'} color={Colors.light.text} size={50} />
+                        <TabBarIcon2 style={styles.contactIcon} name={'location-outline'} color={Colors.light.icon} size={50} />
                         <ThemedText>Godomey, Atlantique, Bénin</ThemedText>
                     </ThemedView>
                 </ThemedView>
@@ -74,6 +74,6 @@ const styles = StyleSheet.create({
         gap: 8
     },
     contactIcon: {
-        fontSize: 22
+        fontSize: 22,
     }
 })

@@ -4,15 +4,20 @@ import React from 'react';
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { useThemeContext } from '@/context/ThemeProvider';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
+  const { theme } = useThemeContext();
 
   return (
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: Colors.orange.color,
         headerShown: false,
+        tabBarStyle: {
+          backgroundColor: theme === 'dark' ? 'white':'#000'
+        }
       }}>
       <Tabs.Screen
         name="index"
@@ -51,11 +56,11 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="notifications"
+        name="settings"
         options={{
-          title: 'Notifications',
+          title: 'Réglages',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'notifications' : 'notifications-outline'} color={color} />
+            <TabBarIcon name={focused ? 'settings' : 'settings-outline'} color={color} />
           ),
         }}
       />
