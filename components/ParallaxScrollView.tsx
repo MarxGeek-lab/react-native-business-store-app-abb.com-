@@ -8,12 +8,14 @@ import Animated, {
 } from 'react-native-reanimated';
 
 import { ThemedView } from '@/components/ThemedView';
+import { ThemedText } from './ThemedText';
+import WhatsappGadget from '@/components/WhatsappWidget/WhatsappWidget';
 
 const HEADER_HEIGHT = 250;
 
 type Props = PropsWithChildren<{
-  headerImage: ReactElement;
-  headerBackgroundColor: { dark: string; light: string };
+  headerImage?: ReactElement;
+  headerBackgroundColor?: { dark: string; light: string };
 }>;
 
 export default function ParallaxScrollView({
@@ -48,13 +50,38 @@ export default function ParallaxScrollView({
         <Animated.View
           style={[
             styles.header,
-            { backgroundColor: headerBackgroundColor[colorScheme] },
             headerAnimatedStyle,
           ]}>
-          {headerImage}
+            <ThemedView
+              style={{
+                width: "100%",
+                borderBottomColor: "light",
+                alignSelf: 'center',
+                justifyContent: 'center',
+              }}>
+              <ThemedText type='title'
+                style={{
+                  color: "#ff5900",
+                  height: 50,
+                  textAlign: 'center',
+                  textAlignVertical: 'center',
+                  paddingBottom: 0,
+                  //justifyContent: 'center',
+                  //alignSelf: 'center'
+                }}>
+                Abb 
+                <ThemedText 
+                  type='defaultSemiBold'
+                  style={{
+                    fontStyle: 'italic',
+                    textAlign: 'center',
+                  }}>.com</ThemedText>
+              </ThemedText>
+            </ThemedView>
         </Animated.View>
         <ThemedView style={styles.content}>{children}</ThemedView>
       </Animated.ScrollView>
+      <WhatsappGadget />
     </ThemedView>
   );
 }
@@ -64,12 +91,16 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
-    height: 250,
     overflow: 'hidden',
+    height: 100,
+    width: "100%",
+    borderBottomWidth: 1,
+    borderBottomColor: '#D0D0D0',
+    justifyContent: 'flex-end',
   },
   content: {
     flex: 1,
-    padding: 32,
+    padding: 16,
     gap: 16,
     overflow: 'hidden',
   },

@@ -23,4 +23,10 @@ export const Colors = {
     tabIconDefault: '#9BA1A6',
     tabIconSelected: tintColorDark,
   },
+  orange: {
+    color: '#ff5900'
+  },
+  common: {
+    green_whatsapp: '#25D366'
+  }
 };
